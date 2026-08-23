@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnionChat</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id="splash-screen" class="screen">
+            <div class="splash-content">
+                <div class="logo-container">
+                    <div class="onion-logo">🧅</div>
+                    <h1>OnionChat</h1>
+                    <p class="subtitle">Real Onion Routing + VPN</p>
+                </div>
+                <div class="connection-status">
+                    <div class="status-item"><span>Onion</span><span class="status-indicator" id="onion-status">●</span></div>
+                    <div class="status-item"><span>VPN</span><span class="status-indicator" id="vpn-status">●</span></div>
+                </div>
+                <button id="onion-start-btn" class="onion-button"><span class="button-icon">🧅</span> Connect Securely</button>
+                <div class="user-info">Connected as: <strong id="user-display">NS(Member)</strong></div>
+                <div class="loading-bar"><div class="loading-progress" id="loading-progress"></div></div>
+                <p class="loading-text" id="loading-text">Ready</p>
+            </div>
+        </div>
+        <div id="chat-screen" class="screen hidden">
+            <div class="chat-header">
+                <div class="header-left"><span class="onion-icon">🧅</span><span class="chat-title">OnionChat</span><span class="connection-badge" id="conn-badge">🔒 Secure</span></div>
+                <div class="header-right"><span id="user-badge">NS(Member)</span><button id="disconnect-btn" class="disconnect-btn">✕</button></div>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-btn" class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <!-- Load Socket.IO from CDN -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
